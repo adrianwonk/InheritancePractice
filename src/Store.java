@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class Store {
     private ArrayList<CISItem> cisItems = new ArrayList<>();
 
+    public Store(ArrayList<CISItem> cisItems) {
+        this.cisItems = cisItems;
+    }
+
     public void addBook(Book b){
         cisItems.add(b);
     }
@@ -72,7 +76,17 @@ public class Store {
     }
 
     public void showAllInfo(){
-        for (CISItem value: cisItems)
-            System.out.println(value);
+        int i = 1;
+        for (CISItem value: cisItems) {
+            System.out.println(i + ". \n" + value); i++;
+        }
+    }
+
+    public ArrayList<CISItem> getAllItems() {
+        return cisItems;
+    }
+
+    public void addItems (CISItem item){
+        cisItems.add(item);
     }
 }
